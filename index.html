@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thermomix Chicken Soup Quick-Lookup: Models, Cuts, Fixes, Storage</title>
+<meta name="description" content="Sortable, filterable reference tables for Thermomix chicken soup: TM5/TM6/TM31 bowl limits, chicken cut comparison, soup styles, stock ratios, troubleshooting, storage and safe temperatures.">
+<style>
+  :root{
+    --bg:#faf8f5; --card:#ffffff; --ink:#1f2933; --muted:#5f6c7b; --line:#e3ded6;
+    --accent:#b5472b; --accent-soft:#f8e9e3; --ok:#2f6f4f; --warn:#8a5a00; --warn-soft:#fff4d6;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header{background:var(--ink);color:#fff;padding:28px 20px}
+  header .wrap{max-width:1100px;margin:0 auto}
+  h1{margin:0 0 4px;font-size:26px;line-height:1.2}
+  header p{margin:0;color:#cbd2d9}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+  main{padding:20px 0 40px}
+  nav.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  nav.jump a{font-size:13px;text-decoration:none;color:var(--accent);background:var(--accent-soft);padding:4px 10px;border-radius:999px}
+  nav.jump a:hover{background:var(--accent);color:#fff}
+  .quick{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:8px;padding:14px 16px;margin-bottom:18px}
+  .quick h2{margin:0 0 10px;font-size:16px;text-transform:uppercase;letter-spacing:.04em;color:var(--accent)}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+  .stat{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+  .stat b{display:block;font-size:19px}
+  .stat span{font-size:12.5px;color:var(--muted)}
+  .toolbar{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .toolbar input{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--line);border-radius:6px;font-size:15px;background:#fff}
+  .toolbar button{padding:9px 12px;border:1px solid var(--line);background:#fff;border-radius:6px;cursor:pointer;font-size:14px}
+  .toolbar button:hover{border-color:var(--accent);color:var(--accent)}
+  #count{font-size:13px;color:var(--muted)}
+  section{margin-top:26px}
+  section h2{font-size:19px;margin:0 0 2px}
+  section .hint{margin:0 0 8px;color:var(--muted);font-size:13.5px}
+  .tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+  table{border-collapse:collapse;width:100%;min-width:640px}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{background:#f1ede6;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;color:#3e4c59;white-space:nowrap}
+  th.sortable{cursor:pointer;user-select:none}
+  th.sortable::after{content:" \2195";color:#9aa5b1}
+  th.asc::after{content:" \2191";color:var(--accent)}
+  th.desc::after{content:" \2193";color:var(--accent)}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#fcfaf7}
+  td:first-child{font-weight:600}
+  .tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 4px 2px 0;white-space:nowrap}
+  .tag.ok{background:#e3f3ea;color:var(--ok)}
+  .tag.warn{background:var(--warn-soft);color:var(--warn)}
+  .note{background:var(--warn-soft);border:1px solid #ecd9a0;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:14px}
+  .empty{display:none;padding:14px;color:var(--muted)}
+  .check{margin:0;padding-left:20px}
+  .check li{margin:4px 0}
+  footer{border-top:1px solid var(--line);padding:18px 0 40px;color:var(--muted);font-size:13.5px}
+  footer a,.src a{color:var(--accent)}
+  .hidden-row{display:none}
+  @media print{.toolbar,nav.jump{display:none}header{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>Thermomix Chicken Soup: Quick-Lookup Reference</h1>
+    <p>Model limits &middot; chicken cuts &middot; soup styles &middot; stock ratios &middot; fixes &middot; storage &middot; safe temperatures</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <nav class="jump" aria-label="Jump to section">
+    <a href="#models">Models</a>
+    <a href="#cuts">Chicken cuts</a>
+    <a href="#styles">Soup styles</a>
+    <a href="#stock">Stock</a>
+    <a href="#published">Published recipes</a>
+    <a href="#fixes">Fixes</a>
+    <a href="#storage">Storage</a>
+    <a href="#temps">Safe temps</a>
+  </nav>
+
+  <div class="quick" id="quick">
+    <h2>Quick reference</h2>
+    <div class="stats">
+      <div class="stat"><b>2.2 L</b><span>TM5 / TM6 bowl maximum</span></div>
+      <div class="stat"><b>2.0 L</b><span>TM31 bowl maximum</span></div>
+      <div class="stat"><b>74&deg;C / 165&deg;F</b><span>Minimum internal temp for chicken and reheated leftovers</span></div>
+      <div class="stat"><b>3&ndash;4 days</b><span>Refrigerated soup at 4&deg;C / 40&deg;F or below</span></div>
+      <div class="stat"><b>2&ndash;3 months</b><span>Frozen soup (quality guideline, at &minus;18&deg;C / 0&deg;F)</span></div>
+      <div class="stat"><b>2 h / 1 h</b><span>Max time out of the fridge; 1 h if room is above 32&deg;C / 90&deg;F</span></div>
+    </div>
+    <div class="note">Never exceed the bowl MAX line. Never put a whole raw chicken in the bowl. Check the thickest piece with a food thermometer; the machine timer and display do not confirm doneness.</div>
+  </div>
+
+  <div class="toolbar">
+    <input id="filter" type="search" placeholder="Filter every table (try: TM6, thigh, noodle, salty, freezer, 165)" aria-label="Filter all tables">
+    <button id="reset" type="button">Clear</button>
+    <span id="count"></span>
+  </div>
+
+  <section id="models">
+    <h2>1. Model limits and lid guidance</h2>
+    <p class="hint">Recipes are not automatically transferable between models. Click a column header to sort.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Model</th>
+        <th class="sortable">Bowl max (L)</th>
+        <th>Hot-cooking lid / accessory guidance</th>
+        <th>Recipe settings</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>TM5</td><td data-sort="2.2">2.2 L</td><td>Follow the TM5 manual for hot cooking; keep the lid opening unobstructed.</td><td>Use a TM5-compatible recipe with verified time, temperature and speed.</td></tr>
+        <tr><td>TM6</td><td data-sort="2.2">2.2 L</td><td>At 95&deg;C (200&deg;F) or above, follow Vorwerk's instructions to use the simmering basket or Varoma dish instead of the tight-fitting black measuring cup, where applicable.</td><td>Confirm the specific recipe's settings for TM6.</td></tr>
+        <tr><td>TM31</td><td data-sort="2.0">2.0 L</td><td>Follow the TM31 manual; use only the intended accessories.</td><td>Check settings against a TM31-compatible recipe before copying from a newer machine.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablewrap" style="margin-top:10px"><table data-sortable>
+      <thead><tr><th>Hot-liquid situation</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><td>Overfill / MAX line</td><td>Treat MAX as a hard limit, not a target. Chicken, vegetables and liquid all take up space and soup can foam while heating. Do not double a recipe without recalculating.</td></tr>
+        <tr><td>Splatter prevention</td><td>Lid correctly seated, opening unobstructed, correct accessory for your model and temperature. If it starts to boil over, stop the appliance per its safety instructions and never reach over escaping steam.</td></tr>
+        <tr><td>Blending hot soup</td><td>Stay within the model's limit, fit the lid correctly, increase speed gradually. Never seal the opening with a tea towel or force the lid while contents are moving.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="cuts">
+    <h2>2. Chicken cut comparison</h2>
+    <p class="hint">No cut has one universal time. Piece size, starting temperature, liquid and settings all matter.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Cut</th>
+        <th class="sortable">Fat / richness</th>
+        <th>Flavour and texture</th>
+        <th>Cooking guidance</th>
+        <th>Best use</th>
+        <th class="sortable">Fits in bowl?</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Boneless breast</td><td data-sort="1">Lean</td><td>Lean, mild; dries out if overcooked.</td><td>Check the largest pieces for doneness.</td><td>Lighter soup</td><td data-sort="1"><span class="tag ok">Yes</span></td></tr>
+        <tr><td>Boneless thigh</td><td data-sort="2">Richer</td><td>Richer; more fat and connective tissue.</td><td>Do not assume breast timings apply.</td><td>Fuller-tasting soup</td><td data-sort="1"><span class="tag ok">Yes</span></td></tr>
+        <tr><td>Bone-in thigh</td><td data-sort="2">Richer</td><td>Bone changes piece shape and how the broth develops.</td><td>Only with a recipe written for this cut and your appliance; do not assume bones suit blade stirring.</td><td>Variation needing testing</td><td data-sort="2"><span class="tag warn">Recipe-specific</span></td></tr>
+        <tr><td>Whole chicken</td><td data-sort="3">Varies</td><td>Too bulky for an ordinary mixing-bowl soup.</td><td>Cook outside the bowl with suitable equipment, then use the meat in a compatible soup.</td><td>Larger family batches</td><td data-sort="3"><span class="tag">No (raw)</span></td></tr>
+        <tr><td>Cooked carcass</td><td data-sort="3">Varies</td><td>Can form part of a stock-based soup.</td><td>Follow a recipe designed for the carcass and your model.</td><td>Stock-focused soup</td><td data-sort="2"><span class="tag warn">Recipe-specific</span></td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="styles">
+    <h2>3. Soup style chooser</h2>
+    <p class="hint">Pick by texture wanted and dietary need.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Style</th>
+        <th>How to get it</th>
+        <th>Texture</th>
+        <th>Dietary check</th>
+        <th>Watch out for</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Chunky vegetable</td><td>Keep vegetables in pieces; use a gentle-stirring method; do not blend.</td><td>Brothy, visible pieces</td><td>Check stock ingredients.</td><td>Needs a recipe with suitable stirring instructions.</td></tr>
+        <tr><td>Chicken noodle</td><td>Add noodles at the stage a tested recipe specifies.</td><td>Brothy, soft noodles</td><td>Use gluten-free noodles if required.</td><td>Noodles absorb broth and keep softening in storage.</td></tr>
+        <tr><td>Chicken and corn</td><td>Add corn in a validated quantity.</td><td>Sweeter, more texture</td><td>Check packaged stock and seasonings.</td><td>Corn changes the liquid balance.</td></tr>
+        <tr><td>Creamy</td><td>Cook vegetables, blend that base per the model's hot-liquid method, then add cooked chicken. Or use a tested thickener / cream finish.</td><td>Smooth or velvety</td><td>Dairy-free alternatives change flavour.</td><td>Use tested quantities of flour, potato or cream; check for separation after reheating.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablewrap" style="margin-top:10px"><table data-sortable>
+      <thead><tr><th>Thickener</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td>Butter + flour (roux-like)</td><td>Thickening base</td></tr>
+        <tr><td>Blended potato</td><td>Adds starch and vegetable body</td></tr>
+        <tr><td>Cream</td><td>Adds richness and dairy flavour</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="stock">
+    <h2>4. Stock options and published ratios</h2>
+    <p class="hint">Ratios are recipe-specific, not universal. Check the label before adding salt.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Stock choice</th>
+        <th>Convenience</th>
+        <th>Body</th>
+        <th>Sodium and ratio</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Stock paste + water</td><td>Easy to measure</td><td>Depends on product</td><td>Follow the label; validate the ratio per litre.</td></tr>
+        <tr><td>Homemade stock</td><td>Needs advance prep</td><td>Varies with ingredients and method</td><td>Measure final quantity; check seasoning.</td></tr>
+        <tr><td>Bone broth</td><td>Convenient if ready-made</td><td>Depends on formulation</td><td>Check label and ingredient information.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablewrap" style="margin-top:10px"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Published recipe</th>
+        <th class="sortable">Water (g)</th>
+        <th>Chicken stock paste</th>
+        <th>Other flavour base</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Hug in a mug chicken soup</td><td data-sort="800">800 g</td><td>1 tbsp</td><td>&mdash;</td></tr>
+        <tr><td>Tex-Mex chicken soup</td><td data-sort="650">650 g</td><td>1 tsp</td><td>Tomatoes and seasoning</td></tr>
+        <tr><td>Chicken and vegetable soup</td><td data-sort="1500">1,500 g</td><td>&mdash;</td><td>Cooked carcass, vegetables, pearl barley</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="published">
+    <h2>5. Published reference recipes (Cookidoo)</h2>
+    <p class="hint">Follow each source recipe's full ingredient list and settings. Do not mix quantities between recipes. Sort by total time.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Recipe</th>
+        <th class="sortable">Total time (min)</th>
+        <th>Listed model compatibility</th>
+        <th>Notes</th>
+      </tr></thead>
+      <tbody>
+        <tr><td><a href="https://cookidoo.thermomix.com/recipes/recipe/en-US/r252402">Hug in a mug</a></td><td data-sort="30">30 min</td><td><span class="tag">TM5</span><span class="tag">TM6</span><span class="tag">TM7</span></td><td>Quick option. A published recipe time, not a universal setting.</td></tr>
+        <tr><td><a href="https://cookidoo.thermomix.com/recipes/recipe/en-US/r607945">Tex-Mex chicken soup</a></td><td data-sort="40">40 min</td><td>See recipe page</td><td>Tomato-based; uses less water and less stock paste.</td></tr>
+        <tr><td><a href="https://cookidoo.thermomix.com/recipes/recipe/en-US/r109176">Chicken and vegetable soup</a></td><td data-sort="90">1 h 30 min</td><td><span class="tag">TM31</span><span class="tag">TM5</span><span class="tag">TM6</span><span class="tag">TM7</span></td><td>Uses a cooked chicken carcass, so it suits leftover-roast situations.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="fixes">
+    <h2>6. Troubleshooting</h2>
+    <p class="hint">Type a symptom in the filter box (for example &ldquo;salty&rdquo; or &ldquo;thin&rdquo;).</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Problem</th>
+        <th>Likely cause</th>
+        <th>Immediate response</th>
+        <th>Prevention</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Dry or stringy chicken</td><td>Overcooking or unsuitable piece size</td><td>Check temperature and texture; adjust method next time.</td><td>Test breast and thigh separately; keep pieces even.</td></tr>
+        <tr><td>Bland soup</td><td>Weak stock or unbalanced seasoning</td><td>Adjust seasoning gradually.</td><td>Measure stock paste and salt.</td></tr>
+        <tr><td>Too salty</td><td>Concentrated stock or excess salt</td><td>Dilute cautiously with suitable liquid.</td><td>Check labels; season at the end.</td></tr>
+        <tr><td>Too thin</td><td>Too much liquid for the vegetable content</td><td>Blend some cooked vegetables or use a tested thickener.</td><td>Measure liquid and final yield.</td></tr>
+        <tr><td>Too thick</td><td>Too little free liquid, or added thickener</td><td>Add liquid gradually.</td><td>Reserve some stock.</td></tr>
+        <tr><td>Cloudy broth</td><td>Fine particles, starch or vigorous movement may contribute</td><td>Treat as a quality issue, not a safety test.</td><td>Record the conditions before blaming an ingredient.</td></tr>
+        <tr><td>Splatter or overfill</td><td>Excess contents, blocked opening or wrong accessory</td><td>Stop safely and follow the manual.</td><td>Respect the fill line; use the correct accessory.</td></tr>
+        <tr><td>Soggy noodles</td><td>Cooked too long or stored in the broth</td><td>Cook a fresh portion separately where practical.</td><td>Add noodles at the tested stage.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="storage">
+    <h2>7. Storage and reheating</h2>
+    <p class="hint">Refrigerate promptly in shallow containers. Freezer times are quality guidelines for food kept continuously frozen.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Version</th>
+        <th class="sortable">Fridge (days)</th>
+        <th>Freezer</th>
+        <th>Reheating tip</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Chicken and vegetable</td><td data-sort="4">3&ndash;4 days</td><td>2&ndash;3 months</td><td>Reheat to 74&deg;C / 165&deg;F.</td></tr>
+        <tr><td>Noodle soup</td><td data-sort="4">3&ndash;4 days</td><td>2&ndash;3 months</td><td>Expect noodles to soften; assess quality after freezing.</td></tr>
+        <tr><td>Creamy soup</td><td data-sort="4">3&ndash;4 days</td><td>2&ndash;3 months</td><td>Reheat gently and check for separation.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Do not leave the full bowl to cool slowly on the bench. Portion, label with the date, and thaw safely. Perishable food should not sit at room temperature more than 2 hours (1 hour above 32&deg;C / 90&deg;F).</div>
+  </section>
+
+  <section id="temps">
+    <h2>8. Safe minimum internal temperatures</h2>
+    <p class="hint">USDA minimums, handy when swapping proteins or reheating. Measure the thickest part with a food thermometer.</p>
+    <div class="tablewrap"><table data-sortable>
+      <thead><tr>
+        <th class="sortable">Food</th>
+        <th class="sortable">&deg;C</th>
+        <th class="sortable">&deg;F</th>
+        <th>Note</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>Chicken and all poultry (pieces, whole, ground)</td><td data-sort="74">74</td><td data-sort="165">165</td><td>Check the largest pieces; colour alone is not reliable.</td></tr>
+        <tr><td>Leftovers and casseroles (reheated)</td><td data-sort="74">74</td><td data-sort="165">165</td><td>Applies to reheated soup.</td></tr>
+        <tr><td>Ground beef, pork, lamb, veal</td><td data-sort="71">71</td><td data-sort="160">160</td><td></td></tr>
+        <tr><td>Egg dishes</td><td data-sort="71">71</td><td data-sort="160">160</td><td></td></tr>
+        <tr><td>Whole beef, pork, lamb, veal; fish</td><td data-sort="63">63</td><td data-sort="145">145</td><td>Beef, pork, lamb and veal: allow a 3-minute rest.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section id="checklist">
+    <h2>Pre-cook checklist</h2>
+    <div class="quick" style="border-left-color:var(--ok)">
+      <ul class="check">
+        <li>Recipe is marked compatible with your exact model (TM5, TM6 or TM31).</li>
+        <li>Total contents sit below the MAX line, with room for foaming.</li>
+        <li>Correct lid accessory for your model and temperature.</li>
+        <li>Chicken pieces cut evenly; raw chicken kept apart from cooked food.</li>
+        <li>Food thermometer ready: 74&deg;C / 165&deg;F in the thickest piece.</li>
+        <li>Stock label checked before adding any extra salt.</li>
+      </ul>
+    </div>
+  </section>
+
+  <p id="none" class="empty">No rows match your filter.</p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="src">Data compiled from and expanded on this <a href="https://kitchenmemo.com/thermomix-chicken-soup/">Thermomix chicken soup TM5, TM6 and TM31 settings guide</a>. Safe-temperature and storage figures follow the <a href="https://www.fsis.usda.gov/food-safety/safe-food-handling-and-preparation/food-safety-basics/safe-temperature-chart">USDA safe-temperature chart</a> and <a href="https://www.foodsafety.gov/food-safety-charts/cold-food-storage-charts">FoodSafety.gov cold-storage chart</a>. Always follow your own model's manual. Last updated 28 Oct 2026.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var filter = document.getElementById('filter');
+  var count = document.getElementById('count');
+  var none = document.getElementById('none');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('section'));
+
+  function applyFilter(){
+    var q = filter.value.trim().toLowerCase();
+    var shown = 0, total = 0;
+    document.querySelectorAll('section tbody tr').forEach(function(tr){
+      total++;
+      var match = !q || tr.textContent.toLowerCase().indexOf(q) !== -1;
+      tr.classList.toggle('hidden-row', !match);
+      if(match) shown++;
+    });
+    sections.forEach(function(s){
+      var wraps = s.querySelectorAll('.tablewrap');
+      wraps.forEach(function(w){
+        var any = w.querySelector('tbody tr:not(.hidden-row)');
+        w.style.display = any || !q ? '' : 'none';
+      });
+      var visible = s.querySelector('tbody tr:not(.hidden-row)');
+      if(s.id === 'checklist'){ s.style.display = q ? 'none' : ''; }
+      else { s.style.display = (visible || !q) ? '' : 'none'; }
+    });
+    document.getElementById('quick').style.display = q ? 'none' : '';
+    count.textContent = q ? shown + ' of ' + total + ' rows' : total + ' rows';
+    none.style.display = (q && shown === 0) ? 'block' : 'none';
+  }
+
+  filter.addEventListener('input', applyFilter);
+  document.getElementById('reset').addEventListener('click', function(){ filter.value=''; applyFilter(); filter.focus(); });
+
+  function cellValue(tr, i){
+    var td = tr.children[i];
+    var v = td.getAttribute('data-sort');
+    return v !== null ? v : td.textContent.trim();
+  }
+
+  document.querySelectorAll('table[data-sortable]').forEach(function(table){
+    var ths = table.querySelectorAll('thead th');
+    ths.forEach(function(th, i){
+      if(!th.classList.contains('sortable')) return;
+      th.addEventListener('click', function(){
+        var dir = th.classList.contains('asc') ? 'desc' : 'asc';
+        ths.forEach(function(h){ h.classList.remove('asc','desc'); });
+        th.classList.add(dir);
+        var tbody = table.querySelector('tbody');
+        var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+        rows.sort(function(a, b){
+          var x = cellValue(a, i), y = cellValue(b, i);
+          var nx = parseFloat(x), ny = parseFloat(y);
+          var r = (!isNaN(nx) && !isNaN(ny)) ? nx - ny : x.localeCompare(y, undefined, {numeric:true, sensitivity:'base'});
+          return dir === 'asc' ? r : -r;
+        });
+        rows.forEach(function(r){ tbody.appendChild(r); });
+      });
+    });
+  });
+
+  applyFilter();
+})();
+</script>
+</body>
+</html>
